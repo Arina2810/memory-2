@@ -1,0 +1,93 @@
+*,
+/*e у всех элементов*/
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    min-height: 100%;
+    background-image: url(../img/fon-gif-1.gif);
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-family: "Rubik Bubbles", system-ui;
+
+}
+
+header {
+    background-color: pink;
+    padding: 20px 15px;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(145, 41, 76);
+}
+
+footer {
+    background-color: aliceblue;
+    padding: 20px 15px;
+}
+
+.copy-text {
+    color: rgb(192, 160, 202);
+    text-align: center;
+}
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border: 5px solid rgb(238, 145, 160);
+    transform-style: preserve-3d;
+    border-radius: 15px;
+    box-shadow: rgb(151, 65, 94) 0 0 6px 2px;
+    transition: 0.5s transform ease-in-out;
+    
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+     
+    
+}
+
+.card::after {
+    content: "";
+    display: block;
+    width: 240px;
+    height: 240px;
+    background-image: url(../img/11208201454253050.gif);
+    border-radius: 10px;
+    background-size: 250px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    backface-visibility: hidden;
+
+
+}
+
+.card-show {
+    transform: rotateY(180deg);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    width: 100%;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px auto;
+}
