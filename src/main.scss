@@ -1,0 +1,41 @@
+$bg-color: pink;
+$w:100px;
+@mixin main-font {
+    color: rgb(112, 46, 20);
+    font-size: 20px;
+    font-style: italic;
+    line-height: 28px;
+}
+@mixin paddings ($value, $border-color:black){
+    border: 1px solid black;
+    padding-top: $value*2;
+    padding-bottom: $value*3;
+    padding-left: $value;
+    padding-right: $value;
+}
+body{
+    background-color: $bg-color;
+}
+.block{
+    width: $w + 200px;
+    margin: $w / 2;
+    padding: $w - 50px;
+    border: $w*0.1 solid paleturquoise ;
+    background-color: adjust-color(rgb(199, 164, 231), $red:50%,);
+
+img {
+    width: 100% - 10%;
+}
+p{
+    color: rgb(166, 219, 74);
+    .bold {
+        font-weight: bold;
+    }
+    &:last-child {
+        font-style: italic;
+    }
+}}
+p{
+    @include main-font;
+    @include paddings(15px);
+}
