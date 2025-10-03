@@ -39,3 +39,45 @@ p{
     @include main-font;
     @include paddings(15px);
 }
+$bg-btn:
+rgb(84, 34, 221);
+$color-btn: #fff;
+$font-size-btn: 18px;
+$radius-btn: 7px;
+
+.auth__btn--login{
+    background-color: $bg-btn;
+    border-radius:  $radius-btn;
+    font-size: $font-size-btn;
+    color: adjust-color($bg-btn,$hue:270deg);
+    padding-left: $font-size-btn*0.5;
+    padding-right: $font-size-btn*0.5;
+    border: none;
+   
+
+}
+.auth__btn--reg {
+    color:adjust-color($bg-btn, $lightness:-10%) ;
+    background-color: adjust-color($bg-btn, $hue:180deg) ;
+    
+}
+.auth {
+max-width: 200px;
+background-color: adjust-color($bg_btn,$lightness:40% );
+padding: 20px;
+&__value {
+    border-radius: $radius-btn;
+}
+&__btn{
+    border:none;
+    transition: all 0.3s;
+    &--login{
+        color: $color-btn;
+        background: $bg-btn;
+    }
+    &--regn {
+        color: adjust-color($bg_btn,$lightness:20% );
+        background: adjust-color($bg_btn,$blackness:20% );
+    }
+}
+}
